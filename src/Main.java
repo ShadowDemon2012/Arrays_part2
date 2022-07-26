@@ -2,11 +2,15 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        String a = Arrays.toString(arr);
+        int totalSumSpent = 0;
+        for (int daySpending : arr) {
+            totalSumSpent = totalSumSpent + daySpending;
+        }
         System.out.println(Arrays.toString(arr));
+        System.out.println("Сумма трат за месяц составила " + totalSumSpent + " рублей");
+            }
 
-    }
-      static int[] arr = generateRandomArray();
+    static int[] arr = generateRandomArray();
 
     public static int[] generateRandomArray() {
         java.util.Random random = new java.util.Random();
@@ -15,7 +19,6 @@ public class Main {
             arr[i] = random.nextInt(100_000) + 100_000;
         }
         return arr;
-
     }
 
 }
