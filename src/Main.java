@@ -20,9 +20,18 @@ public class Main {
         }
         System.out.println("Минимальная сумма трат за день составила " + minDaySpent + " рублей");
         System.out.println("Максимальная сумма трат за день составила " + maxDaySpent + " рублей");
+        int arrayCount = arr.length;
+        double averageSum = (double) totalSumSpent / arrayCount;
+        if (totalSumSpent % arrayCount == 0) {
+            System.out.println("Средняя сумма трат за месяц составила " + Math.round(averageSum) + " рублей");
+        } else {
+            System.out.println("Средняя сумма трат за месяц составила " + averageSum + " рублей");
+        }
+
     }
 
-    static int[] arr = generateRandomArray();
+
+     static int[] arr = generateRandomArray();
 
     public static int[] generateRandomArray() {
         java.util.Random random = new java.util.Random();
@@ -32,5 +41,6 @@ public class Main {
         }
         return arr;
     }
+
 
 }
